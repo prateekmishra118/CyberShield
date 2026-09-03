@@ -25,8 +25,6 @@ TOTAL_NETWORK_RECORDS = 145222
 # There are only 9 different attack categories
 NUMBER_OF_THREAT_CATEGORIES = 9
 
-# After a scan, 15 individual threat incidents are detected.
-# These incidents belong to the 9 categories above.
 TOTAL_DETECTED_THREATS = 15
 
 DETECTION_MODEL = "HistGradientBoosting"
@@ -214,7 +212,6 @@ if "incident_status" not in st.session_state:
 
 def count_threats_requiring_action():
 
-    # Before the first scan, there are no detected threats requiring action.
     if not st.session_state.scan_complete:
         return 0
 
@@ -276,7 +273,6 @@ def reset_simulation():
 
     st.session_state.action_history = []
 
-    # Reset to a clean state: no threats are detected before a new scan.
     st.session_state.incident_status = {
         incident_id: "NOT SCANNED"
         for incident_id in incident_data["Incident ID"]
@@ -296,8 +292,6 @@ def reset_simulation():
 
 def perform_scan():
 
-    # A completed scan creates the detected-threat queue.
-    # Running a new scan starts a fresh detection state.
     st.session_state.incident_status = {
         incident_id: "ACTION REQUIRED"
         for incident_id in incident_data["Incident ID"]
