@@ -1,4 +1,5 @@
-# CyberShield – Network Threat Detection & Protection
+# CyberShield – A Cybersecurity Analytics and Threat Intelligence Platform
+
 
 CyberShield is a cybersecurity analytics and threat protection platform designed to analyze network traffic, identify malicious activities, classify network attacks, and provide an interactive security dashboard for monitoring and protection.
 
